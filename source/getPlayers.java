@@ -16,7 +16,7 @@ public class getPlayers
 	private String[] playerId = new String[SLOTS];
 	private String[][] identifier = new String[SLOTS][2];
 	private String[] playerPing = new String[SLOTS];
-    private boolean[] getCount = new boolean[SLOTS];
+    	private boolean[] getCount = new boolean[SLOTS];
 	public int PlayerCount = 0;
 	
 	
