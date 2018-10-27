@@ -1,6 +1,10 @@
 # FiveM Player List For Java!
 Parses the players.json from FiveM.
 
+# Usage
+Put these classes in your project and install dependencies.
+Then use the methods below to access parsed data!
+
 # Methods
 ```Java	
 	public String returnNameAndId(int listNumber) {
