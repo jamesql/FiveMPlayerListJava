@@ -2,9 +2,8 @@
 Parses the players.json from FiveM.
 
 # Methods
-## 
 ```Java	
-public String returnNameAndId(int listNumber) {
+	public String returnNameAndId(int listNumber) {
 		return (players[listNumber] + " " + playerId[listNumber]);
 	}
 	
