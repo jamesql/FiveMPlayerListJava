@@ -45,7 +45,7 @@ public class getPlayers
 		String jsonString = loadJSON();
 		
 		for (int x = 0; x < SLOTS; x++) {
-			getCount[x] = new JdomParser().parse(jsonString).isNode(x + 1);
+			getCount[x] = new JdomParser().parse(jsonString).isNode(x);
 			if (getCount[x]) {
 				PlayerCount++;
 				String getName = new JdomParser().parse(jsonString)
