@@ -1,9 +1,6 @@
 import java.io.IOException;
-import java.util.List;
-
 import org.json.simple.parser.ParseException;
 import argo.jdom.JdomParser;
-import argo.jdom.JsonNode;
 import argo.saj.InvalidSyntaxException;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -12,11 +9,12 @@ import okhttp3.Response;
 public class getPlayers
 {
 	public final int SLOTS = 32;
+	private String[] plyEndpoint = new String[SLOTS];
 	private String[] players = new String[SLOTS];
 	private String[] playerId = new String[SLOTS];
 	private String[][] identifier = new String[SLOTS][2];
 	private String[] playerPing = new String[SLOTS];
-    	private boolean[] getCount = new boolean[SLOTS];
+    private boolean[] getCount = new boolean[SLOTS];
 	public int PlayerCount = 0;
 	
 	
@@ -58,6 +56,9 @@ public class getPlayers
 						.getNullableStringValue(x, "identifiers", 1);
 				String getPing = new JdomParser().parse(jsonString)
 						.getNumberValue(x, "ping");
+				String getEndpoint = new JdomParser().parse(jsonString)
+						.getNullableStringValue(x, "endpoint");
+				plyEndpoint[x] = getEndpoint;
 				players[x] = getName;
 				playerId[x] = getId;
 				identifier[x][0] = getSteamId;
@@ -68,15 +69,15 @@ public class getPlayers
 	}
 	
 	
-	public String returnNameAndId(int listNumber) {
+	public String getNameAndId(int listNumber) {
 		return (players[listNumber] + " " + playerId[listNumber]);
 	}
 	
-	public String returnName(int listNumber) {
+	public String getName(int listNumber) {
 		return players[listNumber];
 	}
 	
-	public String returnId(int listNumber) {
+	public String getId(int listNumber) {
 		return playerId[listNumber];
 	}
 	
@@ -92,6 +93,8 @@ public class getPlayers
 		return identifier[listNumber][1];
 	}
 	
-	
+	public String getEndpoint(int listNumber){
+		return plyEndpoint[listNumber];
+	}
 	
 }
