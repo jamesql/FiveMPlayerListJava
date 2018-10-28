@@ -7,15 +7,15 @@ Then use the methods below to access parsed data!
 
 # Methods
 ```Java	
-	public String returnNameAndId(int listNumber) {
+	public String getNameAndId(int listNumber) {
 		return (players[listNumber] + " " + playerId[listNumber]);
 	}
 	
-	public String returnName(int listNumber) {
+	public String getName(int listNumber) {
 		return players[listNumber];
 	}
 	
-	public String returnId(int listNumber) {
+	public String getId(int listNumber) {
 		return playerId[listNumber];
 	}
 	
@@ -29,6 +29,10 @@ Then use the methods below to access parsed data!
 	
 	public String getLicenseKey(int listNumber) {
 		return identifier[listNumber][1];
+	}
+	
+	public String getEndpoint(int listNumber){
+		return plyEndpoint[listNumber];
 	}
 ```
 
